@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "pep-detective"
+description="A simple ANCOVA test module"
+version = "0.0.0"
+authors = ["Niu Du <jiyin.dna@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "3.9.*"
+pingouin = "*"
+statsmodels = "*"
+pytest = "*"
+
+[tool.poetry.dev-dependencies]
+black = "*"
+isort = "*"
+pre-commit = "*"
+
+[build-system]
+requires = ["poetry_core>=1.0.0", "pycparser"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 120

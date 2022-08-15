@@ -1,0 +1,41 @@
+#!/usr/bin/env python3
+
+import argparse
+import logging
+from pathlib import Path
+from typing import Union
+
+from pep_detective.src.conn import get_db, init_conn
+
+
+def parse_args():
+    """Parse any command line arguments.
+
+    :return: Parsed arguments
+    :rtype: argparse.Namespace
+    """
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "-db",
+        "--database",
+        help="path to database for ancova results storage",
+        type=Union[Path, str],
+    )
+    parser.add_argument(
+        "-o",
+        "--out-path",
+        help="export report tsv file path",
+        type=Union[Path, str],
+    )
+
+    return parser.parse_args()
+
+
+def main(args: argparse.Namespace):
+    df_report = get_db(init_conn(args.database))
+    df_report.to_csv(args.out_path, sep="\t", index=False)
+
+
+if __name__ == "__main__":
+    main(parse_args())

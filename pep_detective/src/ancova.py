@@ -10,6 +10,7 @@ from statsmodels.formula.api import ols
 from statsmodels.stats.weightstats import ttest_ind
 
 log = logging.getLogger(__name__)
+logging.basicConfig(filename="tmp/std.log", filemode="a", format="%(name)s - %(levelname)s - %(message)s")
 
 
 @dataclass
@@ -49,7 +50,7 @@ class CovarProcessor:
             self.df_raw = pd.read_table(self.input_path)
         except FileNotFoundError as e:
             log.error(
-                'Failed to load TSV file: "%s". Error: %s',
+                'Failed to load TSV file: "%s". Error: %s \n',
                 self.sample_id,
                 str(e),
             )
@@ -62,8 +63,8 @@ class CovarProcessor:
         p_ph = covar_stats.query('Source == "ph"')["p-unc"].values[0]
 
         if np.isnan(p_ph):
-            log.warning(f"Failed to get p value for pH correlation: {self.sample_id}")
-        log.warning(f"ANCOVA results: {self.sample_id} \n {covar_stats.to_markdown()}")
+            log.warning(f"Failed to get p value for pH correlation: {self.sample_id} \n")
+        log.warning(f"ANCOVA results: {self.sample_id} \n {covar_stats.to_markdown()} \n")
         return p_ph < self.max_covar_p_value
 
     def t_test(self) -> AncovaResult:

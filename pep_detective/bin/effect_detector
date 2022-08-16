@@ -7,14 +7,9 @@ This tool conducts a ANCOVA analysis for enzyme activity data. If no significant
 from __future__ import annotations
 
 import argparse
-import logging
 
 from pep_detective.src.ancova import CovarProcessor
 from pep_detective.src.conn import init_conn, insert_db
-
-logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(filename)s %(message)s")
-logging.getLogger().setLevel(logging.INFO)
-logger = logging.getLogger(__file__)
 
 
 def parse_args():

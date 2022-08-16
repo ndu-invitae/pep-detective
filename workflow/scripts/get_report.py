@@ -1,9 +1,5 @@
 #!/usr/bin/env python3
 
-import logging
-from pathlib import Path
-from typing import Union
-
 import pandas as pd
 
 from pep_detective.src.conn import get_db, init_conn

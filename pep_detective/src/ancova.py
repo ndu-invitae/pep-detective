@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import logging
 from dataclasses import dataclass
 
 import numpy as np
@@ -7,6 +8,8 @@ import pandas as pd
 from pingouin import ancova
 from statsmodels.formula.api import ols
 from statsmodels.stats.weightstats import ttest_ind
+
+log = logging.getLogger(__name__)
 
 
 @dataclass
@@ -22,7 +25,6 @@ class AncovaResult:
 class CovarProcessor:
     """
     Main class for processing activity data.
-
 
     input_path: Input tsv file that contains one dependent variable (dv) column, one between-subjects factor column with two levels (bf), and one covariate (covar) column
     max_covar_p_value: maximal allowed P value for rejecting no significant correlation hypothesis (default 0.05)
@@ -43,14 +45,29 @@ class CovarProcessor:
 
     def open_tsv(self):
         """load in tsv file"""
-
-        self.df_raw = pd.read_table(self.input_path)
+        try:
+            self.df_raw = pd.read_table(self.input_path)
+        except Exception as e:
+            log.error(
+                'Failed to load TSV file: "%s". Error: %s',
+                self.sample_id,
+                str(e),
+            )
+            raise
 
     def ancova_analysis(self) -> bool:
         """Run ANCOVA and determine if pH is a significant covariate"""
 
         covar_stats = ancova(data=self.df_raw, dv="activity", between="treatment", covar="ph")
-        return (covar_stats.query('Source == "ph"')["p-unc"] < self.max_covar_p_value).values[0]
+        p_ph = covar_stats.query('Source == "ph"')["p-unc"].values[0]
+
+        if np.isnan(p_ph):
+            log.warning(
+                "Failed to get p value for pH correlation",
+                self.sample_id,
+            )
+        log.info("ANCOVA results", self.sample_id, covar_stats.to_markdown())
+        return p_ph < self.max_covar_p_value
 
     def t_test(self) -> AncovaResult:
         """Execute t test on activities with/ without peptide treatment and return"""

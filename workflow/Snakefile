@@ -1,15 +1,14 @@
 import json
 from pathlib import Path
-
 Path("tmp/samples").mkdir(parents=True, exist_ok=True)
+
+configfile: "config.yaml"
 
 # Get app
 get_fake_data =  config["app"]["get_fake_data"]
 create_db = config["app"]["create_db"]
 effect_detector = config["app"]["effect_detector"]
 get_report = config["app"]["get_report"]
-
-log: "logs/abc.log"
 
 rule all:  
     input:
@@ -21,6 +20,8 @@ rule fake_data_creation:
         num_rep = config["config"]["num_rep"]
     output:
         expand("tmp/samples/{sample}/{sample}.tsv", sample = [f"sample{i+1}" for i in range(config["config"]["num_sample"])])
+    log: 
+        "tmp/fake_data_creation.log"
     script:
         "scripts/fake_data_creator.py"
         
@@ -34,6 +35,8 @@ rule ancova_stats:
         "tmp/samples/{sample}/sqlite.db"
     threads:
         4
+    log: 
+        "tmp/samples/{sample}/ancova_stats.log"
     shell:
         "{create_db} -db {output} && "
         "{effect_detector} -id {params.sample_id} -i {input} -p {params.p_ph_covar} -db {output}"
@@ -43,6 +46,8 @@ rule get_report:
         dbs = expand("tmp/samples/{sample}/sqlite.db", sample = [f"sample{i+1}" for i in range(config["config"]["num_sample"])])
     output:
         config["config"]["output_path"]
+    log: 
+        "tmp/get_report.log"
     script:
         "scripts/get_report.py"
 

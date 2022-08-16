@@ -1,0 +1,50 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count    min threads    max threads
+------------------  -------  -------------  -------------
+all                       1              1              1
+ancova_stats             50              1              1
+fake_data_creation       50              1              1
+get_report                1              1              1
+total                   102              1              1
+
+Select jobs to execute...
+
+[Mon Aug 15 23:50:43 2022]
+rule fake_data_creation:
+    output: tmp/samples/sample1/sample1.tsv
+    jobid: 3
+    reason: Missing output files: tmp/samples/sample1/sample1.tsv
+    wildcards: sample=sample1/sample1
+    resources: tmpdir=/tmp
+
+[Mon Aug 15 23:50:43 2022]
+rule fake_data_creation:
+    output: tmp/samples/sample16/sample16.tsv
+    jobid: 33
+    reason: Missing output files: tmp/samples/sample16/sample16.tsv
+    wildcards: sample=sample16/sample16
+    resources: tmpdir=/tmp
+
+[Mon Aug 15 23:50:43 2022]
+rule fake_data_creation:
+    output: tmp/samples/sample31/sample31.tsv
+    jobid: 63
+    reason: Missing output files: tmp/samples/sample31/sample31.tsv
+    wildcards: sample=sample31/sample31
+    resources: tmpdir=/tmp
+
+[Mon Aug 15 23:50:43 2022]
+rule fake_data_creation:
+    output: tmp/samples/sample46/sample46.tsv
+    jobid: 93
+    reason: Missing output files: tmp/samples/sample46/sample46.tsv
+    wildcards: sample=sample46/sample46
+    resources: tmpdir=/tmp
+
+Waiting at most 100 seconds for missing files.
+Terminating processes on user request, this might take some time.
+Complete log: .snakemake/log/2022-08-15T235042.748150.snakemake.log

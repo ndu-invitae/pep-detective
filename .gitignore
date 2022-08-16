@@ -5,6 +5,7 @@
 .pytest_cache/
 .build/
 .DS_Store
-samples/*
 *.json
 tmp/
+output/
+*.ipynb

@@ -1,13 +1,11 @@
 import sqlite3
-from pathlib import Path
-from typing import Union
 
 from pandas import read_sql_query
 
 from pep_detective.src.ancova import AncovaResult
 
 
-def init_conn(db: Union[Path, str]) -> sqlite3.Connection:
+def init_conn(db: str) -> sqlite3.Connection:
     """create a database connection"""
     conn = None
     try:
@@ -49,6 +47,6 @@ def get_db(conn):
     with conn:
         df_query = read_sql_query("SELECT * from pep_stats", conn)
         df_query["ph_covar"] = df_query["ph_covar"].apply(
-            lambda x: False if "\x00" else True
+            lambda x: False if x == b"\x00" else True
         )  # convert bit back to bool
         return df_query

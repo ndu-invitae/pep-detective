@@ -1,0 +1,35 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count    min threads    max threads
+----------  -------  -------------  -------------
+all               1              1              1
+get_report        1              1              1
+total             2              1              1
+
+Select jobs to execute...
+
+[Tue Aug 16 01:01:40 2022]
+rule get_report:
+    input: tmp/samples/sample1/sqlite.db, tmp/samples/sample10/sqlite.db, tmp/samples/sample11/sqlite.db, tmp/samples/sample12/sqlite.db, tmp/samples/sample13/sqlite.db, tmp/samples/sample14/sqlite.db, tmp/samples/sample15/sqlite.db, tmp/samples/sample16/sqlite.db, tmp/samples/sample17/sqlite.db, tmp/samples/sample18/sqlite.db, tmp/samples/sample19/sqlite.db, tmp/samples/sample2/sqlite.db, tmp/samples/sample20/sqlite.db, tmp/samples/sample3/sqlite.db, tmp/samples/sample4/sqlite.db, tmp/samples/sample5/sqlite.db, tmp/samples/sample6/sqlite.db, tmp/samples/sample7/sqlite.db, tmp/samples/sample8/sqlite.db, tmp/samples/sample9/sqlite.db
+    output: output/report.tsv
+    jobid: 1
+    reason: Missing output files: output/report.tsv
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 01:01:40 2022]
+Error in rule get_report:
+    jobid: 1
+    output: output/report.tsv
+
+RuleException:
+WorkflowErrorin line 34 of /home/jovyan/Documents/jupyter/pep-detective/workflow/Snakefile:
+Failed to open source file /home/jovyan/Documents/jupyter/pep-detective/workflow/../get_report.py
+FileNotFoundError: [Errno 2] No such file or directory: '/home/jovyan/Documents/jupyter/pep-detective/workflow/../get_report.py'
+  File "/home/jovyan/Documents/jupyter/pep-detective/workflow/Snakefile", line 34, in __rule_get_report
+  File "/opt/conda/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2022-08-16T010140.584895.snakemake.log

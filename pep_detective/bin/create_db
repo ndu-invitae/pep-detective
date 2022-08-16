@@ -2,10 +2,8 @@
 
 import argparse
 import logging
-from pathlib import Path
-from typing import Union
 
-from pep_detective.src.conn import create_db
+from pep_detective.src.conn import create_db, init_conn
 
 
 def parse_args():
@@ -20,7 +18,7 @@ def parse_args():
         "-db",
         "--database",
         help="path to database for ancova results storage",
-        type=Union[Path, str],
+        type=str,
     )
 
     return parser.parse_args()

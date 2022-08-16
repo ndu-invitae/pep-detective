@@ -1,0 +1,90 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count    min threads    max threads
+------------------  -------  -------------  -------------
+all                       1              1              1
+ancova_stats             50              1              1
+fake_data_creation       50              1              1
+get_report                1              1              1
+total                   102              1              1
+
+Select jobs to execute...
+
+[Mon Aug 15 23:48:50 2022]
+rule fake_data_creation:
+    output: tmp/samples/sample1/sample1.tsv
+    jobid: 3
+    reason: Missing output files: tmp/samples/sample1/sample1.tsv
+    wildcards: sample=sample1/sample1
+    resources: tmpdir=/tmp
+
+[Mon Aug 15 23:48:51 2022]
+rule fake_data_creation:
+    output: tmp/samples/sample16/sample16.tsv
+    jobid: 33
+    reason: Missing output files: tmp/samples/sample16/sample16.tsv
+    wildcards: sample=sample16/sample16
+    resources: tmpdir=/tmp
+
+[Mon Aug 15 23:48:51 2022]
+rule fake_data_creation:
+    output: tmp/samples/sample31/sample31.tsv
+    jobid: 63
+    reason: Missing output files: tmp/samples/sample31/sample31.tsv
+    wildcards: sample=sample31/sample31
+    resources: tmpdir=/tmp
+
+[Mon Aug 15 23:48:51 2022]
+rule fake_data_creation:
+    output: tmp/samples/sample46/sample46.tsv
+    jobid: 93
+    reason: Missing output files: tmp/samples/sample46/sample46.tsv
+    wildcards: sample=sample46/sample46
+    resources: tmpdir=/tmp
+
+[Mon Aug 15 23:48:51 2022]
+Error in rule fake_data_creation:
+    jobid: 33
+    output: tmp/samples/sample16/sample16.tsv
+
+[Mon Aug 15 23:48:51 2022]
+RuleException:
+CalledProcessErrorin line 23 of /home/jovyan/Documents/jupyter/pep-detective/workflow/Snakefile:
+Command 'set -euo pipefail;  /opt/conda/bin/python3.10 /home/jovyan/Documents/jupyter/pep-detective/.snakemake/scripts/tmp2ofluiwz.fake_data_creator.py' returned non-zero exit status 1.
+  File "/home/jovyan/Documents/jupyter/pep-detective/workflow/Snakefile", line 23, in __rule_fake_data_creation
+  File "/opt/conda/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+Error in rule fake_data_creation:
+    jobid: 63
+    output: tmp/samples/sample31/sample31.tsv
+
+RuleException:
+CalledProcessErrorin line 23 of /home/jovyan/Documents/jupyter/pep-detective/workflow/Snakefile:
+Command 'set -euo pipefail;  /opt/conda/bin/python3.10 /home/jovyan/Documents/jupyter/pep-detective/.snakemake/scripts/tmps480slze.fake_data_creator.py' returned non-zero exit status 1.
+  File "/home/jovyan/Documents/jupyter/pep-detective/workflow/Snakefile", line 23, in __rule_fake_data_creation
+  File "/opt/conda/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+[Mon Aug 15 23:48:51 2022]
+Error in rule fake_data_creation:
+    jobid: 3
+    output: tmp/samples/sample1/sample1.tsv
+
+RuleException:
+CalledProcessErrorin line 23 of /home/jovyan/Documents/jupyter/pep-detective/workflow/Snakefile:
+Command 'set -euo pipefail;  /opt/conda/bin/python3.10 /home/jovyan/Documents/jupyter/pep-detective/.snakemake/scripts/tmpg9vrqbt7.fake_data_creator.py' returned non-zero exit status 1.
+  File "/home/jovyan/Documents/jupyter/pep-detective/workflow/Snakefile", line 23, in __rule_fake_data_creation
+  File "/opt/conda/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+[Mon Aug 15 23:48:51 2022]
+Error in rule fake_data_creation:
+    jobid: 93
+    output: tmp/samples/sample46/sample46.tsv
+
+RuleException:
+CalledProcessErrorin line 23 of /home/jovyan/Documents/jupyter/pep-detective/workflow/Snakefile:
+Command 'set -euo pipefail;  /opt/conda/bin/python3.10 /home/jovyan/Documents/jupyter/pep-detective/.snakemake/scripts/tmps2rllu91.fake_data_creator.py' returned non-zero exit status 1.
+  File "/home/jovyan/Documents/jupyter/pep-detective/workflow/Snakefile", line 23, in __rule_fake_data_creation
+  File "/opt/conda/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2022-08-15T234850.712820.snakemake.log

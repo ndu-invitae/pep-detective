@@ -1,0 +1,34 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count    min threads    max threads
+----------  -------  -------------  -------------
+all               1              1              1
+get_report        1              1              1
+total             2              1              1
+
+Select jobs to execute...
+
+[Tue Aug 16 01:02:02 2022]
+rule get_report:
+    input: tmp/samples/sample1/sqlite.db, tmp/samples/sample10/sqlite.db, tmp/samples/sample11/sqlite.db, tmp/samples/sample12/sqlite.db, tmp/samples/sample13/sqlite.db, tmp/samples/sample14/sqlite.db, tmp/samples/sample15/sqlite.db, tmp/samples/sample16/sqlite.db, tmp/samples/sample17/sqlite.db, tmp/samples/sample18/sqlite.db, tmp/samples/sample19/sqlite.db, tmp/samples/sample2/sqlite.db, tmp/samples/sample20/sqlite.db, tmp/samples/sample3/sqlite.db, tmp/samples/sample4/sqlite.db, tmp/samples/sample5/sqlite.db, tmp/samples/sample6/sqlite.db, tmp/samples/sample7/sqlite.db, tmp/samples/sample8/sqlite.db, tmp/samples/sample9/sqlite.db
+    output: output/report.tsv
+    jobid: 1
+    reason: Missing output files: output/report.tsv
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 01:02:05 2022]
+Error in rule get_report:
+    jobid: 1
+    output: output/report.tsv
+
+RuleException:
+CalledProcessErrorin line 34 of /home/jovyan/Documents/jupyter/pep-detective/workflow/Snakefile:
+Command 'set -euo pipefail;  /opt/conda/bin/python3.10 /home/jovyan/Documents/jupyter/pep-detective/.snakemake/scripts/tmpwh3a61t2.get_report.py' returned non-zero exit status 1.
+  File "/home/jovyan/Documents/jupyter/pep-detective/workflow/Snakefile", line 34, in __rule_get_report
+  File "/opt/conda/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2022-08-16T010202.655022.snakemake.log

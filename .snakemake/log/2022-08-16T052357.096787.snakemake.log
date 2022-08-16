@@ -1,0 +1,37 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count    min threads    max threads
+----------  -------  -------------  -------------
+all               1              1              1
+get_report        1              1              1
+total             2              1              1
+
+Select jobs to execute...
+
+[Tue Aug 16 05:23:57 2022]
+rule get_report:
+    input: tmp/samples/sample1/sqlite.db, tmp/samples/sample2/sqlite.db, tmp/samples/sample3/sqlite.db, tmp/samples/sample4/sqlite.db, tmp/samples/sample5/sqlite.db, tmp/samples/sample6/sqlite.db, tmp/samples/sample7/sqlite.db, tmp/samples/sample8/sqlite.db, tmp/samples/sample9/sqlite.db, tmp/samples/sample10/sqlite.db, tmp/samples/sample11/sqlite.db, tmp/samples/sample12/sqlite.db, tmp/samples/sample13/sqlite.db, tmp/samples/sample14/sqlite.db, tmp/samples/sample15/sqlite.db, tmp/samples/sample16/sqlite.db, tmp/samples/sample17/sqlite.db, tmp/samples/sample18/sqlite.db, tmp/samples/sample19/sqlite.db, tmp/samples/sample20/sqlite.db, tmp/samples/sample21/sqlite.db, tmp/samples/sample22/sqlite.db, tmp/samples/sample23/sqlite.db, tmp/samples/sample24/sqlite.db, tmp/samples/sample25/sqlite.db, tmp/samples/sample26/sqlite.db, tmp/samples/sample27/sqlite.db, tmp/samples/sample28/sqlite.db, tmp/samples/sample29/sqlite.db, tmp/samples/sample30/sqlite.db, tmp/samples/sample31/sqlite.db, tmp/samples/sample32/sqlite.db, tmp/samples/sample33/sqlite.db, tmp/samples/sample34/sqlite.db, tmp/samples/sample35/sqlite.db, tmp/samples/sample36/sqlite.db, tmp/samples/sample37/sqlite.db, tmp/samples/sample38/sqlite.db, tmp/samples/sample39/sqlite.db, tmp/samples/sample40/sqlite.db, tmp/samples/sample41/sqlite.db, tmp/samples/sample42/sqlite.db, tmp/samples/sample43/sqlite.db, tmp/samples/sample44/sqlite.db, tmp/samples/sample45/sqlite.db, tmp/samples/sample46/sqlite.db, tmp/samples/sample47/sqlite.db, tmp/samples/sample48/sqlite.db, tmp/samples/sample49/sqlite.db, tmp/samples/sample50/sqlite.db
+    output: output/report.tsv
+    jobid: 1
+    reason: Missing output files: output/report.tsv
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 05:23:59 2022]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Tue Aug 16 05:23:59 2022]
+localrule all:
+    input: output/report.tsv
+    jobid: 0
+    reason: Input files updated by another job: output/report.tsv
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 05:23:59 2022]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2022-08-16T052357.096787.snakemake.log

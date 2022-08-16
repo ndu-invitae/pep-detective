@@ -1,0 +1,126 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count    min threads    max threads
+------------------  -------  -------------  -------------
+all                       1              1              1
+ancova_stats              5              4              4
+fake_data_creation        1              1              1
+get_report                1              1              1
+total                     8              1              4
+
+Select jobs to execute...
+
+[Tue Aug 16 04:24:16 2022]
+rule fake_data_creation:
+    output: tmp/samples/sample1/sample1.tsv, tmp/samples/sample2/sample2.tsv, tmp/samples/sample3/sample3.tsv, tmp/samples/sample4/sample4.tsv, tmp/samples/sample5/sample5.tsv
+    jobid: 3
+    reason: Missing output files: tmp/samples/sample5/sample5.tsv, tmp/samples/sample3/sample3.tsv, tmp/samples/sample1/sample1.tsv, tmp/samples/sample4/sample4.tsv, tmp/samples/sample2/sample2.tsv; Params have changed since last execution
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 04:24:16 2022]
+Finished job 3.
+1 of 8 steps (12%) done
+Select jobs to execute...
+
+[Tue Aug 16 04:24:16 2022]
+rule ancova_stats:
+    input: tmp/samples/sample3/sample3.tsv
+    output: tmp/samples/sample3/sqlite.db
+    jobid: 5
+    reason: Missing output files: tmp/samples/sample3/sqlite.db; Input files updated by another job: tmp/samples/sample3/sample3.tsv
+    wildcards: sample=sample3
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 04:24:21 2022]
+Finished job 5.
+2 of 8 steps (25%) done
+Select jobs to execute...
+
+[Tue Aug 16 04:24:21 2022]
+rule ancova_stats:
+    input: tmp/samples/sample1/sample1.tsv
+    output: tmp/samples/sample1/sqlite.db
+    jobid: 2
+    reason: Missing output files: tmp/samples/sample1/sqlite.db; Input files updated by another job: tmp/samples/sample1/sample1.tsv
+    wildcards: sample=sample1
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 04:24:25 2022]
+Finished job 2.
+3 of 8 steps (38%) done
+Select jobs to execute...
+
+[Tue Aug 16 04:24:25 2022]
+rule ancova_stats:
+    input: tmp/samples/sample4/sample4.tsv
+    output: tmp/samples/sample4/sqlite.db
+    jobid: 6
+    reason: Missing output files: tmp/samples/sample4/sqlite.db; Input files updated by another job: tmp/samples/sample4/sample4.tsv
+    wildcards: sample=sample4
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 04:24:30 2022]
+Finished job 6.
+4 of 8 steps (50%) done
+Select jobs to execute...
+
+[Tue Aug 16 04:24:30 2022]
+rule ancova_stats:
+    input: tmp/samples/sample5/sample5.tsv
+    output: tmp/samples/sample5/sqlite.db
+    jobid: 7
+    reason: Missing output files: tmp/samples/sample5/sqlite.db; Input files updated by another job: tmp/samples/sample5/sample5.tsv
+    wildcards: sample=sample5
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 04:24:34 2022]
+Finished job 7.
+5 of 8 steps (62%) done
+Select jobs to execute...
+
+[Tue Aug 16 04:24:34 2022]
+rule ancova_stats:
+    input: tmp/samples/sample2/sample2.tsv
+    output: tmp/samples/sample2/sqlite.db
+    jobid: 4
+    reason: Missing output files: tmp/samples/sample2/sqlite.db; Input files updated by another job: tmp/samples/sample2/sample2.tsv
+    wildcards: sample=sample2
+    threads: 4
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 04:24:38 2022]
+Finished job 4.
+6 of 8 steps (75%) done
+Select jobs to execute...
+
+[Tue Aug 16 04:24:38 2022]
+rule get_report:
+    input: tmp/samples/sample1/sqlite.db, tmp/samples/sample2/sqlite.db, tmp/samples/sample3/sqlite.db, tmp/samples/sample4/sqlite.db, tmp/samples/sample5/sqlite.db
+    output: output/report.tsv
+    jobid: 1
+    reason: Missing output files: output/report.tsv; Input files updated by another job: tmp/samples/sample5/sqlite.db, tmp/samples/sample1/sqlite.db, tmp/samples/sample2/sqlite.db, tmp/samples/sample3/sqlite.db, tmp/samples/sample4/sqlite.db
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 04:24:41 2022]
+Finished job 1.
+7 of 8 steps (88%) done
+Select jobs to execute...
+
+[Tue Aug 16 04:24:41 2022]
+localrule all:
+    input: output/report.tsv
+    jobid: 0
+    reason: Input files updated by another job: output/report.tsv
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 04:24:41 2022]
+Finished job 0.
+8 of 8 steps (100%) done
+Complete log: .snakemake/log/2022-08-16T042415.873074.snakemake.log

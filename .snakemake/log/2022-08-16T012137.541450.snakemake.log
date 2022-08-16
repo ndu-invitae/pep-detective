@@ -1,0 +1,311 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Job stats:
+job             count    min threads    max threads
+------------  -------  -------------  -------------
+all                 1              1              1
+ancova_stats       20              1              1
+get_report          1              1              1
+total              22              1              1
+
+Select jobs to execute...
+
+[Tue Aug 16 01:21:37 2022]
+rule ancova_stats:
+    input: tmp/samples/sample17/sample17.tsv
+    output: tmp/samples/sample17/sqlite.db
+    jobid: 10
+    reason: Missing output files: tmp/samples/sample17/sqlite.db
+    wildcards: sample=sample17
+    resources: tmpdir=/tmp
+
+
+[Tue Aug 16 01:21:37 2022]
+rule ancova_stats:
+    input: tmp/samples/sample8/sample8.tsv
+    output: tmp/samples/sample8/sqlite.db
+    jobid: 20
+    reason: Missing output files: tmp/samples/sample8/sqlite.db
+    wildcards: sample=sample8
+    resources: tmpdir=/tmp
+
+
+[Tue Aug 16 01:21:37 2022]
+rule ancova_stats:
+    input: tmp/samples/sample20/sample20.tsv
+    output: tmp/samples/sample20/sqlite.db
+    jobid: 14
+    reason: Missing output files: tmp/samples/sample20/sqlite.db
+    wildcards: sample=sample20
+    resources: tmpdir=/tmp
+
+
+[Tue Aug 16 01:21:37 2022]
+rule ancova_stats:
+    input: tmp/samples/sample3/sample3.tsv
+    output: tmp/samples/sample3/sqlite.db
+    jobid: 15
+    reason: Missing output files: tmp/samples/sample3/sqlite.db
+    wildcards: sample=sample3
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 01:21:42 2022]
+Finished job 15.
+1 of 22 steps (5%) done
+Select jobs to execute...
+
+[Tue Aug 16 01:21:42 2022]
+rule ancova_stats:
+    input: tmp/samples/sample1/sample1.tsv
+    output: tmp/samples/sample1/sqlite.db
+    jobid: 2
+    reason: Missing output files: tmp/samples/sample1/sqlite.db
+    wildcards: sample=sample1
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 01:21:42 2022]
+Finished job 10.
+2 of 22 steps (9%) done
+[Tue Aug 16 01:21:42 2022]
+Finished job 20.
+3 of 22 steps (14%) done
+[Tue Aug 16 01:21:42 2022]
+Finished job 14.
+4 of 22 steps (18%) done
+Select jobs to execute...
+
+[Tue Aug 16 01:21:42 2022]
+rule ancova_stats:
+    input: tmp/samples/sample6/sample6.tsv
+    output: tmp/samples/sample6/sqlite.db
+    jobid: 18
+    reason: Missing output files: tmp/samples/sample6/sqlite.db
+    wildcards: sample=sample6
+    resources: tmpdir=/tmp
+
+
+[Tue Aug 16 01:21:42 2022]
+rule ancova_stats:
+    input: tmp/samples/sample7/sample7.tsv
+    output: tmp/samples/sample7/sqlite.db
+    jobid: 19
+    reason: Missing output files: tmp/samples/sample7/sqlite.db
+    wildcards: sample=sample7
+    resources: tmpdir=/tmp
+
+
+[Tue Aug 16 01:21:42 2022]
+rule ancova_stats:
+    input: tmp/samples/sample14/sample14.tsv
+    output: tmp/samples/sample14/sqlite.db
+    jobid: 7
+    reason: Missing output files: tmp/samples/sample14/sqlite.db
+    wildcards: sample=sample14
+    resources: tmpdir=/tmp
+
+Select jobs to execute...
+[Tue Aug 16 01:21:47 2022]
+Finished job 2.
+5 of 22 steps (23%) done
+
+[Tue Aug 16 01:21:47 2022]
+rule ancova_stats:
+    input: tmp/samples/sample15/sample15.tsv
+    output: tmp/samples/sample15/sqlite.db
+    jobid: 8
+    reason: Missing output files: tmp/samples/sample15/sqlite.db
+    wildcards: sample=sample15
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 01:21:47 2022]
+Finished job 18.
+6 of 22 steps (27%) done
+[Tue Aug 16 01:21:47 2022]
+Finished job 19.
+7 of 22 steps (32%) done
+[Tue Aug 16 01:21:47 2022]
+Finished job 7.
+8 of 22 steps (36%) done
+Select jobs to execute...
+
+[Tue Aug 16 01:21:47 2022]
+rule ancova_stats:
+    input: tmp/samples/sample5/sample5.tsv
+    output: tmp/samples/sample5/sqlite.db
+    jobid: 17
+    reason: Missing output files: tmp/samples/sample5/sqlite.db
+    wildcards: sample=sample5
+    resources: tmpdir=/tmp
+
+
+[Tue Aug 16 01:21:47 2022]
+rule ancova_stats:
+    input: tmp/samples/sample9/sample9.tsv
+    output: tmp/samples/sample9/sqlite.db
+    jobid: 21
+    reason: Missing output files: tmp/samples/sample9/sqlite.db
+    wildcards: sample=sample9
+    resources: tmpdir=/tmp
+
+
+[Tue Aug 16 01:21:47 2022]
+rule ancova_stats:
+    input: tmp/samples/sample12/sample12.tsv
+    output: tmp/samples/sample12/sqlite.db
+    jobid: 5
+    reason: Missing output files: tmp/samples/sample12/sqlite.db
+    wildcards: sample=sample12
+    resources: tmpdir=/tmp
+
+Select jobs to execute...
+[Tue Aug 16 01:21:53 2022]
+Finished job 8.
+9 of 22 steps (41%) done
+
+[Tue Aug 16 01:21:53 2022]
+rule ancova_stats:
+    input: tmp/samples/sample13/sample13.tsv
+    output: tmp/samples/sample13/sqlite.db
+    jobid: 6
+    reason: Missing output files: tmp/samples/sample13/sqlite.db
+    wildcards: sample=sample13
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 01:21:53 2022]
+Finished job 17.
+10 of 22 steps (45%) done
+Select jobs to execute...
+
+[Tue Aug 16 01:21:53 2022]
+rule ancova_stats:
+    input: tmp/samples/sample10/sample10.tsv
+    output: tmp/samples/sample10/sqlite.db
+    jobid: 3
+    reason: Missing output files: tmp/samples/sample10/sqlite.db
+    wildcards: sample=sample10
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 01:21:53 2022]
+Finished job 5.
+11 of 22 steps (50%) done
+Select jobs to execute...
+
+[Tue Aug 16 01:21:53 2022]
+rule ancova_stats:
+    input: tmp/samples/sample16/sample16.tsv
+    output: tmp/samples/sample16/sqlite.db
+    jobid: 9
+    reason: Missing output files: tmp/samples/sample16/sqlite.db
+    wildcards: sample=sample16
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 01:21:53 2022]
+Finished job 21.
+12 of 22 steps (55%) done
+Select jobs to execute...
+
+[Tue Aug 16 01:21:53 2022]
+rule ancova_stats:
+    input: tmp/samples/sample19/sample19.tsv
+    output: tmp/samples/sample19/sqlite.db
+    jobid: 12
+    reason: Missing output files: tmp/samples/sample19/sqlite.db
+    wildcards: sample=sample19
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 01:21:58 2022]
+Finished job 6.
+13 of 22 steps (59%) done
+Select jobs to execute...
+
+[Tue Aug 16 01:21:58 2022]
+rule ancova_stats:
+    input: tmp/samples/sample18/sample18.tsv
+    output: tmp/samples/sample18/sqlite.db
+    jobid: 11
+    reason: Missing output files: tmp/samples/sample18/sqlite.db
+    wildcards: sample=sample18
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 01:21:58 2022]
+Finished job 9.
+14 of 22 steps (64%) done
+Select jobs to execute...
+
+[Tue Aug 16 01:21:58 2022]
+rule ancova_stats:
+    input: tmp/samples/sample2/sample2.tsv
+    output: tmp/samples/sample2/sqlite.db
+    jobid: 13
+    reason: Missing output files: tmp/samples/sample2/sqlite.db
+    wildcards: sample=sample2
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 01:21:58 2022]
+Finished job 3.
+15 of 22 steps (68%) done
+Select jobs to execute...
+
+[Tue Aug 16 01:21:58 2022]
+rule ancova_stats:
+    input: tmp/samples/sample11/sample11.tsv
+    output: tmp/samples/sample11/sqlite.db
+    jobid: 4
+    reason: Missing output files: tmp/samples/sample11/sqlite.db
+    wildcards: sample=sample11
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 01:21:58 2022]
+Finished job 12.
+16 of 22 steps (73%) done
+Select jobs to execute...
+
+[Tue Aug 16 01:21:58 2022]
+rule ancova_stats:
+    input: tmp/samples/sample4/sample4.tsv
+    output: tmp/samples/sample4/sqlite.db
+    jobid: 16
+    reason: Missing output files: tmp/samples/sample4/sqlite.db
+    wildcards: sample=sample4
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 01:22:04 2022]
+Finished job 13.
+17 of 22 steps (77%) done
+[Tue Aug 16 01:22:04 2022]
+Finished job 4.
+18 of 22 steps (82%) done
+[Tue Aug 16 01:22:04 2022]
+Finished job 11.
+19 of 22 steps (86%) done
+[Tue Aug 16 01:22:04 2022]
+Finished job 16.
+20 of 22 steps (91%) done
+Select jobs to execute...
+
+[Tue Aug 16 01:22:04 2022]
+rule get_report:
+    input: tmp/samples/sample1/sqlite.db, tmp/samples/sample10/sqlite.db, tmp/samples/sample11/sqlite.db, tmp/samples/sample12/sqlite.db, tmp/samples/sample13/sqlite.db, tmp/samples/sample14/sqlite.db, tmp/samples/sample15/sqlite.db, tmp/samples/sample16/sqlite.db, tmp/samples/sample17/sqlite.db, tmp/samples/sample18/sqlite.db, tmp/samples/sample19/sqlite.db, tmp/samples/sample2/sqlite.db, tmp/samples/sample20/sqlite.db, tmp/samples/sample3/sqlite.db, tmp/samples/sample4/sqlite.db, tmp/samples/sample5/sqlite.db, tmp/samples/sample6/sqlite.db, tmp/samples/sample7/sqlite.db, tmp/samples/sample8/sqlite.db, tmp/samples/sample9/sqlite.db
+    output: output/report.tsv
+    jobid: 1
+    reason: Input files updated by another job: tmp/samples/sample16/sqlite.db, tmp/samples/sample14/sqlite.db, tmp/samples/sample9/sqlite.db, tmp/samples/sample11/sqlite.db, tmp/samples/sample20/sqlite.db, tmp/samples/sample5/sqlite.db, tmp/samples/sample10/sqlite.db, tmp/samples/sample17/sqlite.db, tmp/samples/sample19/sqlite.db, tmp/samples/sample2/sqlite.db, tmp/samples/sample3/sqlite.db, tmp/samples/sample6/sqlite.db, tmp/samples/sample8/sqlite.db, tmp/samples/sample12/sqlite.db, tmp/samples/sample1/sqlite.db, tmp/samples/sample18/sqlite.db, tmp/samples/sample15/sqlite.db, tmp/samples/sample7/sqlite.db, tmp/samples/sample4/sqlite.db, tmp/samples/sample13/sqlite.db; Code has changed since last execution
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 01:22:06 2022]
+Finished job 1.
+21 of 22 steps (95%) done
+Select jobs to execute...
+
+[Tue Aug 16 01:22:06 2022]
+localrule all:
+    input: output/report.tsv
+    jobid: 0
+    reason: Input files updated by another job: output/report.tsv
+    resources: tmpdir=/tmp
+
+[Tue Aug 16 01:22:06 2022]
+Finished job 0.
+22 of 22 steps (100%) done
+Complete log: .snakemake/log/2022-08-16T012137.541450.snakemake.log

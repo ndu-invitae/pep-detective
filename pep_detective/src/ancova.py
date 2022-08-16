@@ -1,8 +1,6 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from pathlib import Path
-from typing import Union
 
 import numpy as np
 import pandas as pd
@@ -33,7 +31,7 @@ class CovarProcessor:
     def __init__(
         self,
         sample_id: str,
-        input_path: Union[Path, str],
+        input_path: str,
         max_covar_p_value: float = 0.05,
     ):
 

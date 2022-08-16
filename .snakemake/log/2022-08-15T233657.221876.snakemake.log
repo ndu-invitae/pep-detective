@@ -1,0 +1,2 @@
+SyntaxErrorin line 22 of /home/jovyan/Documents/jupyter/pep-detective/workflow/Snakefile:
+Unexpected keyword scripts in rule definition (Snakefile, line 22)

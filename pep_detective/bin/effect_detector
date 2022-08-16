@@ -8,8 +8,6 @@ from __future__ import annotations
 
 import argparse
 import logging
-from pathlib import Path
-from typing import Union
 
 from pep_detective.src.ancova import CovarProcessor
 from pep_detective.src.conn import init_conn, insert_db
@@ -37,7 +35,7 @@ def parse_args():
         "-i",
         "--input-file",
         help="tsv file containing 3 columns: activity, ph, and treatment",
-        type=Union[Path, str],
+        type=str,
     )
     parser.add_argument(
         "-p",
@@ -49,7 +47,7 @@ def parse_args():
         "-db",
         "--database",
         help="path to database for ancova results storage",
-        type=Union[Path, str],
+        type=str,
     )
 
     return parser.parse_args()

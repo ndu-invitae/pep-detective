@@ -1,0 +1,11 @@
+---
+config:
+    p_ph_covar: 0.05
+    output_path: "output/report.tsv"
+    num_sample: 50
+    num_rep: 5
+app:
+    create_db: "pep_detective/bin/create_db"
+    effect_detector: "pep_detective/bin/effect_detector"
+    get_report: "pep_detective/src/get_report.py" 
+    get_fake_data: "pep_detective/src/fake_data_creator.py"

@@ -1,7 +1,0 @@
-Building DAG of jobs...
-MissingInputException in rule ancova_stats in line 16 of /home/jovyan/Documents/jupyter/pep-detective/workflow/Snakefile:
-Missing input files for rule ancova_stats:
-    output: tmp/samples/sample1/sqlite.db
-    wildcards: sample=sample1
-    affected files:
-        tmp/samples/sample1/sample1.tsv

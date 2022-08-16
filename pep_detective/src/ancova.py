@@ -47,7 +47,7 @@ class CovarProcessor:
         """load in tsv file"""
         try:
             self.df_raw = pd.read_table(self.input_path)
-        except Exception as e:
+        except FileNotFoundError as e:
             log.error(
                 'Failed to load TSV file: "%s". Error: %s',
                 self.sample_id,
@@ -62,11 +62,8 @@ class CovarProcessor:
         p_ph = covar_stats.query('Source == "ph"')["p-unc"].values[0]
 
         if np.isnan(p_ph):
-            log.warning(
-                "Failed to get p value for pH correlation",
-                self.sample_id,
-            )
-        log.info("ANCOVA results", self.sample_id, covar_stats.to_markdown())
+            log.warning(f"Failed to get p value for pH correlation: {self.sample_id}")
+        log.warning(f"ANCOVA results: {self.sample_id} \n {covar_stats.to_markdown()}")
         return p_ph < self.max_covar_p_value
 
     def t_test(self) -> AncovaResult:

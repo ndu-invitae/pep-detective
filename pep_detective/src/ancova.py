@@ -92,4 +92,4 @@ class CovarProcessor:
             alternative="smaller",
         )  # test if peptide is a suppressor
 
-        return AncovaResult(self.sample_id, significant_ph, t_test_result_1[1], t_test_result_2[1])
+        return AncovaResult(self.sample_id, significant_ph, round(t_test_result_1[1], 4), round(t_test_result_2[1], 4))

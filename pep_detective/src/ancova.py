@@ -27,6 +27,7 @@ class CovarProcessor:
     """
     Main class for processing activity data.
 
+    sample_id: sample id associate with input tsv file
     input_path: Input tsv file that contains one dependent variable (dv) column, one between-subjects factor column with two levels (bf), and one covariate (covar) column
     max_covar_p_value: maximal allowed P value for rejecting no significant correlation hypothesis (default 0.05)
     """
